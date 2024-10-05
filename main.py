@@ -27,7 +27,7 @@ if st.session_state.logged_in:
         st.session_state.logged_in = False
         st.session_state.username = ""
         st.session_state.name = ""
-        st.experimental_rerun()
+        st.rerun()
 
 else:
     auth_mode = st.experimental_get_query_params().get("mode", ["login"])[0]
@@ -55,7 +55,7 @@ else:
                 st.session_state.username = username
                 st.session_state.name = user_db[username]["name"]
                 st.success("Login bem-sucedido!")
-                st.experimental_rerun()
+                st.rerun()
             else:
                 st.error("Usuário ou senha incorretos!")
 
@@ -89,7 +89,7 @@ else:
 
             if submit_button:
                 st.session_state.register_step = 2
-                st.experimental_rerun()
+                st.rerun()
 
         elif st.session_state.register_step == 2:
             with st.form("documents_form"):
@@ -105,7 +105,7 @@ else:
 
             if submit_button2:
                 st.session_state.register_step = 3
-                st.experimental_rerun()
+                st.rerun()
 
         elif st.session_state.register_step == 3:
             with st.form("account_form"):
