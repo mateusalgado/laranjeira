@@ -5,6 +5,7 @@ user_db = {
     "admin": {"password": "admin123", "name": "Administrador"}
 }
 
+
 # Função para verificar o login
 def login(username, password):
     if username in user_db and user_db[username]["password"] == password:
